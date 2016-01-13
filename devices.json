@@ -1,0 +1,14 @@
+[
+  {
+    "id": "Nexusplayer",
+    "adb": {
+      "ro.product.device": [ "fugu" ],
+      "ro.bootloader": ["FUGU-02.11"],
+      "ro.build.id": ["MMB29T", "LMY48M", "LMY47D"]
+    },
+    "fastboot": {
+      "product": [ "fugu" ]
+    }
+  }
+]
+

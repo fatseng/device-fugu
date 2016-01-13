@@ -31,6 +31,7 @@ TARGET_BOARD_PLATFORM := moorefield
 TARGET_BOOTLOADER_BOARD_NAME := fugu
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 6393129984
 BOARD_FLASH_BLOCK_SIZE := 2048
 
 TARGET_DROIDBOOT_LIBS := libintel_droidboot
@@ -45,6 +46,7 @@ BOARD_KERNEL_CMDLINE += earlyprintk=nologger loglevel=8
 BOARD_KERNEL_CMDLINE += androidboot.hardware=fugu androidboot.serialno=01234567890123456789
 BOARD_KERNEL_CMDLINE += snd_pcm.maximum_substreams=8
 BOARD_KERNEL_CMDLINE += intel_soc_pmu.enable_s3=0
+#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Custom dumpstate library to add board specific stuff to bugreport
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.fugu
@@ -153,8 +155,8 @@ INTEL_DPST := true
 # bootstub as 2nd bootloader
 TARGET_BOOTLOADER_IS_2ND := true
 
-BOARD_SEPOLICY_DIRS := device/asus/fugu/sepolicy
-BOARD_SEPOLICY_UNION := \
+BOARD_SEPOLICY_DIRS += device/asus/fugu/sepolicy
+BOARD_SEPOLICY_UNION += \
     bluetooth.te \
     btfwloader.te \
     dhcp.te \
